@@ -34,6 +34,11 @@ const User = new Schema({
         type: Number,
         required: true
     }
-})
+},
+{
+    timestamps: true,
+    versionKey: false
+}
+);
 
 export default model('user', User)
