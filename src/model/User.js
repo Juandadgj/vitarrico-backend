@@ -19,6 +19,7 @@ const User = new Schema({
     mail: {
         type: String,
         required: true,
+        unique: true,
         trim: true
     },
     password: {
@@ -34,6 +35,11 @@ const User = new Schema({
         type: Number,
         required: true
     }
-})
+},
+{
+    timestamps: true,
+    versionKey: false
+}
+);
 
 export default model('user', User)
