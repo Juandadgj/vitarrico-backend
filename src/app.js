@@ -15,7 +15,6 @@ app.use(cors())
 connectDB();
 
 app.use(morgan('dev'));
-//app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
