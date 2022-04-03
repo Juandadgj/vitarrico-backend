@@ -27,8 +27,12 @@ export const createUser = async (req, res) => {
 export const updateUser = async (req, res) => {
     try {
         const { id } = req.params;
+        if (req.body.password) {
+            const salt = await bcrypt.genSalt(10);
+            req.body.password = await bcrypt.hash(req.body.password, salt)
+        }
         await User.updateOne({_id: id}, req.body)
-        res.send(`User updated :D`);
+        res.send(`User with id ${id} updated :D`);
     } catch (error) {
         res.send(error);
     }
@@ -39,7 +43,7 @@ export const deleteUser = async (req, res) => {
         const { id } = req.params;
         console.log(req.params);
         await User.remove({_id: id});
-        res.send('User deleted :(')
+        res.send('User with id ${id} deleted :(')
     } catch (error) {
         console.log(error);
         res.send(error)
