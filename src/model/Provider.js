@@ -1,17 +1,26 @@
 import {Schema, model, Types} from 'mongoose';
 
-const User = new Schema({
+const Provider = new Schema({
     name: {
         type: String,
         required: true,
         trim: true
     },
-    last_name: {
+    category: {
         type: String,
         required: true,
         trim: true
     },
-    document: {
+    products: {
+        type: Array,
+        required: true
+    },
+    direction: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    phone: {
         type: String,
         required: true,
         trim: true
@@ -19,21 +28,7 @@ const User = new Schema({
     mail: {
         type: String,
         required: true,
-        unique: true,
         trim: true
-    },
-    password: {
-        type: String,
-        required: true
-    },
-    phone: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    idRol: {
-        type: Number,
-        required: true
     }
 },
 {
@@ -42,4 +37,4 @@ const User = new Schema({
 }
 );
 
-export default model('user', User);
+export default model('provider', Provider);
