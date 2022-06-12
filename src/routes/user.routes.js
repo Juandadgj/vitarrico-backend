@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import {
+    allUsers,
     updateUser,
     deleteUser,
     signup,
@@ -8,6 +9,8 @@ import {
 import { verifyToken } from '../middlewares/authJwt';
 
 const router = Router();
+
+router.get('/users', allUsers);
 
 router.put('/user/:id', verifyToken, updateUser);
 
