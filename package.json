@@ -1,12 +1,13 @@
 {
   "name": "vitarrico-backend-node",
   "version": "0.0.1",
-  "description": "Vitarrico Backend",
+  "description": "Backend of Vitarrico Project",
   "main": "app.js",
   "scripts": {
     "babel-node": "babel-node --presets=@babel/preset-env",
     "dev": "nodemon --exec npm run babel-node src/app.js",
-    "start": "babel-node src/app.js"
+    "build": "babel src --out-dir dist",
+    "start": "node dist/app.js"
   },
   "repository": {
     "type": "git",
@@ -19,21 +20,20 @@
   },
   "homepage": "https://github.com/Juandadgj/vitarrico-backend-node#readme",
   "dependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "express-handlebars": "^6.0.3",
+    "helmet": "^5.0.2",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.6",
     "morgan": "^1.10.0",
-    "node": "^17.7.1"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.17.6",
-    "@babel/core": "^7.17.5",
-    "@babel/node": "^7.16.8",
-    "@babel/preset-env": "^7.16.11",
     "nodemon": "^2.0.15"
   }
 }

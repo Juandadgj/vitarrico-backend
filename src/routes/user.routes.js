@@ -1,22 +1,20 @@
 import { Router } from 'express';
-import { 
-    allUsers, 
-    createUser, 
-    updateUser, 
-    deleteUser, 
-    login 
+import {
+    updateUser,
+    deleteUser,
+    signup,
+    signin
 } from '../controller/user.controller';
+import { verifyToken } from '../middlewares/authJwt';
 
 const router = Router();
 
-router.get('/user', allUsers);
+router.put('/user/:id', verifyToken, updateUser);
 
-router.post('/user', createUser);
+router.delete('/user/:id', verifyToken, deleteUser);
 
-router.put('/user/:id', updateUser);
+router.post('/signup', signup);
 
-router.delete('/user/:id', deleteUser);
-
-router.post('/login', login);
+router.post('/signin', signin);
 
 export default router;

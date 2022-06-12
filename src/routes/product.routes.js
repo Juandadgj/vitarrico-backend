@@ -5,15 +5,16 @@ import {
     updateProduct, 
     deleteProduct 
 } from '../controller/product.controller';
+import { verifyToken, isAdmin } from '../middlewares/authJwt';
 
 const router = Router();
 
 router.get('/products', allProducts);
 
-router.post('/product', createProduct);
+router.post('/product', [verifyToken, isAdmin], createProduct);
 
-router.put('/product', updateProduct);
+router.put('/product', [verifyToken, isAdmin], updateProduct);
 
-router.delete('/product', deleteProduct);
+router.delete('/product', [verifyToken, isAdmin], deleteProduct);
 
 export default router;

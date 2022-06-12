@@ -3,18 +3,13 @@ import {Schema, model} from 'mongoose';
 export const ROLES = ['client', 'admin'];
 
 const Rol = new Schema({
-    idRol : {
-        type: Number,
-        required: true,
-    },
-    rol: {
+    name: {
         type: String,
         required: true,
         trim: true
     }
 },
 {
-    timestamps: true,
     versionKey: false
 }
 );

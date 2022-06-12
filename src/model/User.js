@@ -31,10 +31,12 @@ const User = new Schema({
         required: true,
         trim: true
     },
-    idRol: {
-        type: Number,
-        required: true
-    }
+    roles: [
+        {
+            type: Types.ObjectId,
+            ref: 'rol'
+        }
+    ]
 },
 {
     timestamps: true,
