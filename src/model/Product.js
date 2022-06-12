@@ -6,6 +6,11 @@ const Product = new Schema({
         required: true,
         trim: true
     },
+    category: {
+        type: String,
+        required: true,
+        trim: true
+    },
     barcode: {
         type: String,
         required: true,
@@ -16,9 +21,9 @@ const Product = new Schema({
         required: true,
         trim: true
     },
-    amounts: {
-        type: Array,
-        required: true
+    image: {
+        type: String,
+        trim: true
     }
 },
 {

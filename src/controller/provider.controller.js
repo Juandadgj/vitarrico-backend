@@ -17,7 +17,7 @@ export const createProvider = async (req, res) => {
         res.status(201).send(provider);
     } catch (error) {
         console.log(error);
-        res.status(400).send(error);
+        res.status(400).json({message: error.message});
     }
 }
 
@@ -28,7 +28,7 @@ export const updateProvider = async (req, res) => {
         res.status(201).send(provider);
     } catch (error) {
         console.log(error);
-        res.status(400).send(error);
+        res.status(400).json({message: error.message});
     }
 }
 
@@ -39,6 +39,6 @@ export const deleteProvider = async (req, res) => {
         res.status(200).send(provider);
     } catch (error) {
         console.log(error);
-        res.status(400).send(error);
+        res.status(400).json({message: error.message});
     }
 }

@@ -17,7 +17,7 @@ export const createProduct = async (req, res) => {
         res.status(201).send(product);
     } catch (error) {
         console.log(error);
-        res.status(400).send(error);
+        res.status(400).json({message: error.message});
     }
 }
 
@@ -31,7 +31,7 @@ export const updateProduct = async (req, res) => {
         res.status(201).send(product);
     } catch (error) {
         console.log(error);
-        res.status(400).send(error);
+        res.status(400).json({message: error.message});
     }
 }
 
@@ -45,6 +45,6 @@ export const deleteProduct = async (req, res) => {
         res.status(200).send(product);
     } catch (error) {
         console.log(error);
-        res.status(400).send(error);
+        res.status(400).json({message: error.message});
     }
 }

@@ -5,15 +5,16 @@ import {
     updateProvider,
     deleteProvider
 } from '../controller/provider.controller';
+import { isAdmin, verifyToken } from "../middlewares/authJwt";
 
 const router = Router();
 
-router.get('/providers', allProviders);
+router.get('/providers', [verifyToken, isAdmin], allProviders);
 
-router.post('/provider', createProvider);
+router.post('/provider', [verifyToken, isAdmin], createProvider);
 
-router.put('/provider', updateProvider);
+router.put('/provider', [verifyToken, isAdmin], updateProvider);
 
-router.delete('/provider', deleteProvider);
+router.delete('/provider', [verifyToken, isAdmin], deleteProvider);
 
 export default router;

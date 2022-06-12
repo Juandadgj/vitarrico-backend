@@ -17,7 +17,7 @@ export const createOrder = async (req, res) => {
         res.status(201).send(order);
     } catch (error) {
         console.log(error);
-        res.status(400).send(error);
+        res.status(400).json({message: error.message});
     }
 }
 
@@ -28,7 +28,7 @@ export const updateOrder = async (req, res) => {
         res.status(201).send(order);
     } catch (error) {
         console.log(error);
-        res.status(400).send(error);
+        res.status(400).json({message: error.message});
     }
 }
 
@@ -39,6 +39,6 @@ export const deleteOrder = async (req, res) => {
         res.status(200).send(order);
     } catch (error) {
         console.log(error);
-        res.status(400).send(error);
+        res.status(400).json({message: error.message});
     }
 }

@@ -1,19 +1,10 @@
-import {Schema, model, Types} from 'mongoose';
+import {Schema, model} from 'mongoose';
 
 const Provider = new Schema({
     name: {
         type: String,
         required: true,
         trim: true
-    },
-    category: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    products: {
-        type: Array,
-        required: true
     },
     direction: {
         type: String,
