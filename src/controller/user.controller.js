@@ -3,6 +3,16 @@ import Rol from '../model/Rol';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
+export const allUsers = async (req, res) => {
+    try {
+        const users = await User.find();
+        res.status(200).send(users);
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(error);
+    }
+}
+
 export const updateUser = async (req, res) => {
     try {
         const { id } = req.params;
