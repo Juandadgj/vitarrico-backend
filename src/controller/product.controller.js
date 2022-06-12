@@ -41,7 +41,7 @@ export const deleteProduct = async (req, res) => {
         if (!id) {
             throw new Error('ID required!');
         }
-        const product = await Product.findOneAndUpdate({_id: id});
+        const product = await Product.findOneAndDelete({_id: id});
         res.status(200).send(product);
     } catch (error) {
         console.log(error);
