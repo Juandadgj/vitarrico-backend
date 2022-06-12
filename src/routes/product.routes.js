@@ -13,8 +13,8 @@ router.get('/products', allProducts);
 
 router.post('/product', [verifyToken, isAdmin], createProduct);
 
-router.put('/product', [verifyToken, isAdmin], updateProduct);
+router.put('/product/:id', [verifyToken, isAdmin], updateProduct);
 
-router.delete('/product', [verifyToken, isAdmin], deleteProduct);
+router.delete('/product/:id', [verifyToken, isAdmin], deleteProduct);
 
 export default router;

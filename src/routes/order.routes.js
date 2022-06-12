@@ -13,8 +13,8 @@ router.get('/orders', [verifyToken, isAdmin], allOrders);
 
 router.post('/order', [verifyToken, isAdmin], createOrder);
 
-router.put('/order', [verifyToken, isAdmin], updateOrder);
+router.put('/order/:id', [verifyToken, isAdmin], updateOrder);
 
-router.delete('/order', [verifyToken, isAdmin], deleteOrder);
+router.delete('/order/:id', [verifyToken, isAdmin], deleteOrder);
 
 export default router;

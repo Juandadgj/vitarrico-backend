@@ -13,8 +13,8 @@ router.get('/providers', [verifyToken, isAdmin], allProviders);
 
 router.post('/provider', [verifyToken, isAdmin], createProvider);
 
-router.put('/provider', [verifyToken, isAdmin], updateProvider);
+router.put('/provider/:id', [verifyToken, isAdmin], updateProvider);
 
-router.delete('/provider', [verifyToken, isAdmin], deleteProvider);
+router.delete('/provider/:id', [verifyToken, isAdmin], deleteProvider);
 
 export default router;
